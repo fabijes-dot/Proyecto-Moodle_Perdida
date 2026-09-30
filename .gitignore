@@ -1,0 +1,14 @@
+# Datos crudos: contienen datos personales (aunque sean ficticios, se tratan como reales - LOPDP)
+data/crudos/
+evea_export_simulado.csv
+*export*.csv
+data/procesados/estudiantes_anon.csv
+
+# La sal del hash es secreta: nunca se sube
+.env
+
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+.DS_Store
