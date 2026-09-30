@@ -1,7 +1,7 @@
 # Alerta temprana de pérdida de materias (EVA Moodle)
 
 Trabajo final · Maestría en Inteligencia Artificial y Ciencia de Datos · Programación y Análisis de Datos
-Universidad Central del Ecuador · Facultad de Ciencias  
+  
 **Autores:** Fabiola Jescenia Chacha · Paul Vicente Huancayo · Henry Chicaiza · Gabriela Moscoso
 
 ## Pregunta de análisis
