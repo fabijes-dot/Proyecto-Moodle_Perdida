@@ -1,7 +1,7 @@
 """
-limpieza.py — Anonimización (LOPDP), limpieza y variables del proyecto
+Anonimización (LOPDP), limpieza y variables del proyecto
 ======================================================================
-La exportación de EVEA viene en formato LARGO (una fila por actividad calificada).
+La exportación de Moodle viene una fila por actividad calificada
 Orden de uso:
   crudo → anonimizar() → extraer_curso() → extraer_actividad() → limpiar()
         → resumir_por_curso()   (una fila por estudiante y curso, lista para el EDA)
@@ -13,7 +13,7 @@ from scipy import stats
 
 from src.generar_datos import NOTA_MINIMA, INICIO, FIN, CARRERAS
 
-# catálogo de carreras (en la base real sale de mdl_course_categories)
+# catálogo de carreras -> base real sale de mdl_course_categories
 CATALOGO = {cod: nombre for nombre, (cod, *_ ) in CARRERAS.items()}
 
 PERSONALES = ["student_id", "username", "firstname", "lastname", "email"]
@@ -21,7 +21,7 @@ SEMANA_CORTE = 6          # "inicio de ciclo": primeras 6 semanas
 
 
 # --------------------------------------------------------------------------- #
-# 1. Anonimización (Taller 4)
+# 1. Anonimización 
 # --------------------------------------------------------------------------- #
 def seudonimo(valor, sal: str) -> str:
     """Hash SHA-256 con sal secreta; se conservan 12 caracteres."""
@@ -79,7 +79,7 @@ def extraer_actividad(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # --------------------------------------------------------------------------- #
-# 3. Limpieza (Taller 1)
+# 3. Limpieza 
 # --------------------------------------------------------------------------- #
 def limpiar(df: pd.DataFrame) -> pd.DataFrame:
     """Quita filas duplicadas (mismo estudiante, curso y actividad)."""
@@ -123,7 +123,7 @@ def resumir_por_curso(df: pd.DataFrame, semana_corte: int = SEMANA_CORTE) -> pd.
 
 
 # --------------------------------------------------------------------------- #
-# 5. Diagnóstico (actividad del reel): ¿los datos tienen señal o son ruido?
+# 5. Diagnóstico 
 # --------------------------------------------------------------------------- #
 def diagnostico_eda(df: pd.DataFrame) -> pd.DataFrame:
     """Para cada columna numérica: asimetría, atípicos IQR, razón std/uniforme y p-valor KS."""

@@ -1,11 +1,10 @@
 """
-generar_datos.py — Simulación de una exportación de calificaciones de EVEA (Moodle)
+Simulación de una exportación de calificaciones de Moodle-EVA
 ====================================================================================
-Datos SINTÉTICOS con la MISMA ESTRUCTURA que el reporte real de EVEA:
-una fila por estudiante × curso × actividad calificada (formato "largo").
+Datos SINTÉTICOS con la MISMA ESTRUCTURA que el reporte real de Moodle EVA: una fila por estudiante-curso-actividad calificada.
 
-Columnas (iguales a la exportación real):
-  student_id, username, firstname, lastname, email        → mdl_user (FICTICIOS)
+Columnas:
+  student_id, username, firstname, lastname, email        → mdl_user 
   course_id, course_code, course_name                     → mdl_course
   first_course_access, last_course_access                 → logs / mdl_user_lastaccess
   evaluacion, tipo_evaluacion                             → mdl_grade_items (itemname, itemtype)
@@ -15,8 +14,8 @@ Los nombres de las actividades siguen el formato real:
   "ASISTIDO POR EL PROFESOR: PRF ││ 10 PTOS ││ <tema> ││ FECHA DE ENTREGA (18/04/2026)"
   componentes: PRF (asistido por el profesor), PAE (práctico experimental), AA (aprendizaje autónomo)
 
-Ciclo simulado: 15/03/2026 – 07/08/2026. Se aprueba con 70 % de la nota final.
-Incluye problemas reales: notas sin calificar (NULL), entregas "(atrasado)", filas duplicadas.
+Ciclo simulado: 15/03/2026- 07/08/2026. Se aprueba con 70 % de la nota final.
+Incluye problemas reales: notas sin calificar, entregas "atrasado", filas duplicadas.
 """
 import numpy as np
 import pandas as pd
@@ -70,7 +69,7 @@ def _fecha_hora(dia, hora):
 
 
 def generar_crudo(n_estudiantes=800, semilla=2026):
-    """Exportación cruda simulada (formato largo) con datos personales ficticios."""
+    """Exportación cruda simulada con datos personales ficticios."""
     rng = np.random.default_rng(semilla)
     carreras = list(CARRERAS)
     p = np.array([CARRERAS[c][1] for c in carreras]); p = p / p.sum()

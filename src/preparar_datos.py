@@ -1,9 +1,8 @@
 """
-preparar_datos.py — Pipeline completo: generar → anonimizar → extraer → limpiar → resumir
-Uso (desde la carpeta del proyecto):   python -m src.preparar_datos
+Permite generar → anonimizar → extraer → limpiar → resumir
 """
-import os
 
+import os
 from src.generar_datos import generar_crudo
 from src.limpieza import (anonimizar, k_anonimato, suprimir_grupos_pequenos, extraer_curso,
                           extraer_actividad, limpiar, resumir_por_curso)
