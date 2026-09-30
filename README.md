@@ -1,7 +1,9 @@
 # Alerta temprana de pérdida de materias (EVA Moodle)
 
 Trabajo final · Maestría en Inteligencia Artificial y Ciencia de Datos
+
 **Asignatura:** Programación y Análisis de Datos
+
 **Autores:** 
 Fabiola Jescenia Chacha
 Paul Vicente Huancayo Hidalgo
