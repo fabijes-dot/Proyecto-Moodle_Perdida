@@ -5,10 +5,7 @@ Trabajo final · Maestría en Inteligencia Artificial y Ciencia de Datos
 **Asignatura:** Programación y Análisis de Datos
 
 **Autores:** 
-Fabiola Jescenia Chacha
-Paul Vicente Huancayo Hidalgo
-Henry Chicaiza
-Gabriela Moscoso
+Fabiola Jescenia Chacha·Paul Vicente Huancayo Hidalgo·Henry Chicaiza·Gabriela Moscoso
 
 ## Pregunta de análisis
 ¿Qué factores se relacionan con que un estudiante **repruebe una materia**, y es posible **identificar a mitad del ciclo (semana 6)** a quienes están en riesgo?
