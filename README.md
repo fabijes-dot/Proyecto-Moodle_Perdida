@@ -1,7 +1,12 @@
 # Alerta temprana de pérdida de materias (EVA Moodle)
 
-Trabajo final · Maestría en Inteligencia Artificial y Ciencia de Datos · Programación y Análisis de Datos
-**Autora:** Fabiola Jescenia
+Trabajo final · Maestría en Inteligencia Artificial y Ciencia de Datos
+**Asignatura:** Programación y Análisis de Datos
+**Autores:** 
+Fabiola Jescenia Chacha
+Paul Vicente Huancayo Hidalgo
+Henry Chicaiza
+Gabriela Moscoso
 
 ## Pregunta de análisis
 ¿Qué factores se relacionan con que un estudiante **repruebe una materia**, y es posible **identificar a mitad del ciclo (semana 6)** a quienes están en riesgo?
@@ -9,7 +14,7 @@ Trabajo final · Maestría en Inteligencia Artificial y Ciencia de Datos · Prog
 **Alcance:** ciclos 1 a 5 de la carrera (primeros ciclos, donde se concentra la pérdida y el abandono).
 
 ## Fuente de datos
-Los datos son **sintéticos**: simulan la exportación de calificaciones de un aula virtual EVA Moodle
+Los datos son sintéticos ya que simulan la exportación de calificaciones de un aula virtual EVA Moodle
 (una fila por estudiante × curso × actividad), con la misma estructura que el reporte real.
 No se usaron datos reales porque son datos personales y su uso requiere autorización según la **LOPDP**.
 La simulación incluye datos personales **ficticios** (nombre, correo, id) para aplicar el proceso de anonimización.
