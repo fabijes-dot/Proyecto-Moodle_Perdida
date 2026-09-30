@@ -1,11 +1,8 @@
 # Alerta temprana de pérdida de materias (EVA Moodle)
 
-Trabajo final · Maestría en Inteligencia Artificial y Ciencia de Datos
-
-**Asignatura:** Programación y Análisis de Datos
-
-**Autores:** 
-Fabiola Jescenia Chacha · Paul Vicente Huancayo · Henry Chicaiza · Gabriela Moscoso
+Trabajo final · Maestría en Inteligencia Artificial y Ciencia de Datos · Programación y Análisis de Datos
+Universidad Central del Ecuador · Facultad de Ciencias  
+**Autores:** Fabiola Jescenia Chacha · Paul Vicente Huancayo · Henry Chicaiza · Gabriela Moscoso
 
 ## Pregunta de análisis
 ¿Qué factores se relacionan con que un estudiante **repruebe una materia**, y es posible **identificar a mitad del ciclo (semana 6)** a quienes están en riesgo?
@@ -13,7 +10,7 @@ Fabiola Jescenia Chacha · Paul Vicente Huancayo · Henry Chicaiza · Gabriela M
 **Alcance:** ciclos 1 a 5 de la carrera (primeros ciclos, donde se concentra la pérdida y el abandono).
 
 ## Fuente de datos
-Los datos son sintéticos ya que simulan la exportación de calificaciones de un aula virtual EVA Moodle
+Los datos son **sintéticos**: simulan la exportación de calificaciones de un aula virtual EVA Moodle
 (una fila por estudiante × curso × actividad), con la misma estructura que el reporte real.
 No se usaron datos reales porque son datos personales y su uso requiere autorización según la **LOPDP**.
 La simulación incluye datos personales **ficticios** (nombre, correo, id) para aplicar el proceso de anonimización.
@@ -38,6 +35,7 @@ La **sal** del hash se lee de un archivo `.env` (no se sube a GitHub). Copia `.e
 ```
 proyecto_perdida/
 ├── app.py                  # dashboard (Streamlit + Plotly)
+├── assets/logo_uce.png     # logo de la portada del dashboard
 ├── 01_EDA.ipynb            # análisis exploratorio paso a paso
 ├── src/
 │   ├── generar_datos.py    # simulación de la exportación de EVA Moodle

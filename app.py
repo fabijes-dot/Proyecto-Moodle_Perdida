@@ -77,6 +77,16 @@ cursos, act = cargar()
 # --------------------------------------------------------------------------- #
 # 2. Filtros
 # --------------------------------------------------------------------------- #
+# Portada: logo, asignatura y autores
+LOGO = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "logo_uce.png")
+if os.path.exists(LOGO):
+    st.sidebar.image(LOGO)
+st.sidebar.markdown("**Maestría en Inteligencia Artificial y Ciencia de Datos**  \n"
+                    "Programación y Análisis de Datos · Proyecto final")
+st.sidebar.caption("**Autores:** Fabiola Jescenia Chacha · Paul Vicente Huancayo · "
+                   "Henry Chicaiza · Gabriela Moscoso")
+st.sidebar.divider()
+
 st.sidebar.header("Filtros")
 f_carrera = st.sidebar.multiselect("Carrera", sorted(cursos["carrera"].unique()), placeholder="Todas")
 f_nivel = st.sidebar.multiselect("Ciclo", sorted(cursos["nivel"].unique()), placeholder="Todos")
