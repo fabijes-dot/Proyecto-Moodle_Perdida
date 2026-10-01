@@ -53,7 +53,7 @@ def suprimir_grupos_pequenos(df: pd.DataFrame, cuasi: list, k: int = 5):
 # 2. Extraer información de los textos
 # --------------------------------------------------------------------------- #
 def extraer_curso(df: pd.DataFrame) -> pd.DataFrame:
-    """course_code: 01/2026C1/P/04/120-03/5/000002-5A → periodo, nivel, paralelo; course_name → materia."""
+    """course_code: 01/2026A/P/04/120-03/5/000002-5A → periodo, nivel, paralelo; course_name → materia."""
     df = df.copy()
     partes = df["course_code"].str.split("/")
     df["periodo"] = partes.str[1]

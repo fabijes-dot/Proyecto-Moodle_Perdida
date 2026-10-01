@@ -23,7 +23,7 @@ import pandas as pd
 NOTA_MINIMA = 70                       # % para aprobar
 INICIO = pd.Timestamp("2026-03-15")
 FIN = pd.Timestamp("2026-08-07")
-PERIODO = "2026C1"
+PERIODO = "2026A"
 
 # carrera: (código "unidad/carrera-versión", probabilidad, dificultad)
 CARRERAS = {
