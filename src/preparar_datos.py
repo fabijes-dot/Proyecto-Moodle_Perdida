@@ -7,6 +7,7 @@ from src.generar_datos import generar_crudo
 from src.limpieza import (anonimizar, k_anonimato, suprimir_grupos_pequenos, extraer_curso,
                           extraer_actividad, limpiar, resumir_por_curso)
 
+#Calcula en donde estan los archvios 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CRUDO = os.path.join(RAIZ, "data", "crudos", "evea_export_simulado.csv")
 PROC_ACT = os.path.join(RAIZ, "data", "procesados", "calificaciones_anon.csv")
@@ -40,9 +41,9 @@ def main():
         print(f"  Se suprimieron {n} estudiantes → k = {k_anonimato(datos, CUASI)[0]}")
 
     datos = limpiar(extraer_actividad(datos))
-    datos.to_csv(PROC_ACT, index=False)
+    datos.to_csv(PROC_ACT, index=False) #se gnera el archivo calificaciones_anon, una fila por actividad
     cursos = resumir_por_curso(datos)
-    cursos.to_csv(PROC_CUR, index=False)
+    cursos.to_csv(PROC_CUR, index=False) # genera archivo cursos_anon una fila por estudiante y materia
     print(f"Calificaciones (anónimas): {datos.shape} → {PROC_ACT}")
     print(f"Resumen por curso:         {cursos.shape} → {PROC_CUR}")
 

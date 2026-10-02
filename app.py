@@ -23,7 +23,7 @@ ROJO = "#E4572E"
 # --------------------------------------------------------------------------- #
 # 1. Carga de datos (se guarda en caché para que el dashboard sea rápido)
 # --------------------------------------------------------------------------- #
-@st.cache_data
+@st.cache_data #guarda los datos para no leer cada vez el csv
 def cargar():
     cursos = pd.read_csv(os.path.join(CARPETA, "cursos_anon.csv"))
     act = pd.read_csv(os.path.join(CARPETA, "calificaciones_anon.csv"),
@@ -54,7 +54,7 @@ def tasa_por(data, col):
     """% de reprobación por grupo, ocultando grupos pequeños."""
     t = data.groupby(col, observed=True)["reprobo"].agg(reprobacion="mean", n="size").reset_index()
     t["reprobacion"] = (t["reprobacion"] * 100).round(1)
-    return t[t["n"] >= MIN_GRUPO]
+    return t[t["n"] >= MIN_GRUPO] #oculta los grupos con menos de 5
 
 
 def barras(t, col, titulo, horizontal=False):
@@ -88,6 +88,7 @@ st.sidebar.caption("**Autores:** Fabiola Jescenia Chacha · Paul Vicente Huancay
 st.sidebar.divider()
 
 st.sidebar.header("Filtros")
+#filtros de la barra lateral
 f_carrera = st.sidebar.multiselect("Carrera", sorted(cursos["carrera"].unique()), placeholder="Todas")
 f_nivel = st.sidebar.multiselect("Ciclo", sorted(cursos["nivel"].unique()), placeholder="Todos")
 st.sidebar.divider()
@@ -115,6 +116,7 @@ st.title("🎓 Alerta temprana de pérdida de materias")
 st.markdown("**Pregunta:** ¿qué factores se relacionan con que un estudiante repruebe, "
             "y se puede identificar el riesgo **en las primeras semanas** del ciclo?")
 
+#k indicadores
 k = st.columns(5)
 k[0].metric("Estudiantes", f"{c['id_estudiante'].nunique():,}")
 k[1].metric("Matrículas (estudiante-curso)", f"{len(c):,}")
